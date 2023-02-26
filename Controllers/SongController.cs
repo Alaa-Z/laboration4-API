@@ -30,7 +30,7 @@ namespace TestAPI.Controllers
             return NotFound();
         }
 
-        // Include the Artist, Category in the respnse and thene chose id, title, length, ArtistName,CategoryName
+        // Include the Artist, Category in the respons and then chose id, title, length, ArtistName,CategoryName
         var songs = await _context.Songs
         .Include(s => s.Artist)
         .Include(s => s.Category)
@@ -243,7 +243,7 @@ namespace TestAPI.Controllers
                 return NotFound();
             }
 
-            // Get all songs by the category
+            // Get all songs by the category id
             var songs = await _context.Songs.Where(s => s.CategoryID == categoryId)
                .Select(s => new
                {
